@@ -1,11 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DAL;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
-CreateAsync().GetAwaiter().GetResult();
-RetreiveAsync().GetAwaiter().GetResult();
+//CreateAsync().GetAwaiter().GetResult();
+//RetreiveAsync().GetAwaiter().GetResult();
+UpdateAsync().GetAwaiter().GetResult();
 
+Console.ReadKey();
 static async Task CreateAsync()
 {
     //Add Customer 
@@ -57,4 +60,40 @@ static async Task RetreiveAsync()
         }
 
     }
+}
+
+static async Task UpdateAsync()
+{
+    //Supuesto: Existe el objeto a modificar 
+
+    using (var repository = RepositoryFactory.CreateRepository())
+    {
+        var customerToUpdate = await repository.RetreiveAsync<Customer>(c => c.Id == 78);
+
+        if (customerToUpdate != null) 
+        {
+            customerToUpdate.FirstName = "Liu";
+            customerToUpdate.LastName = "Wong";
+            customerToUpdate.City = "Toronto";
+            customerToUpdate.Country = "Canada";
+            customerToUpdate.Phone = "+14337 6353039";
+        }
+        try 
+        {
+            bool update = await repository.UpdateAsync(customerToUpdate);
+            if (update)
+            {
+                Console.WriteLine("Customer updated successfully.");
+            }else
+            {
+                Console.WriteLine("Custome update failed.");
+            }    
+            
+        }
+        catch (Exception ex) 
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+        
 }

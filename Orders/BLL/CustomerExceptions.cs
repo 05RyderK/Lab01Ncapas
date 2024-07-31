@@ -9,21 +9,27 @@ namespace BLL.Exceptions
 {
     public class CustomerExceptions : Exception
     {
-        //You can add more static methods here to throw other customer-related exceptions
-        
-        private CustomerExceptions(string message) : base(message) 
+        // You can add more static methods here to throw other customer-related exceptions
+
+        public CustomerExceptions()
         {
-           //Optional: Add constructor logico for logging or custom error handling 
+            throw new CustomerExceptions($"No customers found in the database.");
         }
 
-        public static void TrhowCustomerAlreadyExistsException(String firstname,  String lastname)
+        private CustomerExceptions(string message)
+            : base(message)
         {
-            throw new CustomerExceptions($"A client with the name Already exists{firstname} {lastname}.");
+            throw new Exception(message);
         }
 
-        public static void ThrowInvalidCustomerDataException(string message)
+        public static void ThrowCustomerAlreadyExistsException(string firstName, string lastName)
         {
-            throw new CustomerExceptions(message);
+            throw new CustomerExceptions($"A client with the name already exists: {firstName} {lastName}.");
+        }
+
+        public static void ThrowInvalidCustomerIdException(int id)
+        {
+            throw new CustomerExceptions($"Invalid Customer ID: {id}");
         }
     }
 }

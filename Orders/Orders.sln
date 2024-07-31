@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTestDAL", "ConsoleAppTestDAL\ConsoleAppTestDAL.csproj", "{195FF409-2799-45FA-A898-6FBCFFCAED05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{E0707586-658A-4500-BBF3-B6568B337807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{E0707586-658A-4500-BBF3-B6568B337807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC", "SLC\SLC.csproj", "{F3C51948-786C-4A1E-A645-EDEAE4AF37E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E0707586-658A-4500-BBF3-B6568B337807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0707586-658A-4500-BBF3-B6568B337807}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0707586-658A-4500-BBF3-B6568B337807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C51948-786C-4A1E-A645-EDEAE4AF37E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C51948-786C-4A1E-A645-EDEAE4AF37E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C51948-786C-4A1E-A645-EDEAE4AF37E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C51948-786C-4A1E-A645-EDEAE4AF37E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -62,6 +62,10 @@ namespace BLL
                 // Define el criterio de filtro para obtener todos los clientes.
                 Expression<Func<Customer, bool>> allCustomersCriteria = x => true;
                 Result = await r.FilterAsync<Customer>(allCustomersCriteria);
+                if (Result == null) 
+                {
+                    new CustomerExceptions();
+                }
             }
 
             return Result;

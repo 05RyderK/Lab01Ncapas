@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-//using Microsoft./*EntityFrameworkCore;*/
+using Microsoft.EntityFrameworkCore;
 
 namespace Entities.Models;
 
 [Table("Supplier")]
-//[Index("Country", Name = "IndexSupplierCountry")]
-//[Index("CompanyName", Name = "IndexSupplierName")]
+[Index("Country", Name = "IndexSupplierCountry")]
+[Index("CompanyName", Name = "IndexSupplierName")]
 public partial class Supplier
 {
     [Key]

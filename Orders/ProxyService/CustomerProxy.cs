@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿
+using Entities.Models;
 using ProxyService.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace ProxyService
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://localhost:7202/api/Customer/") // Asegúrate de que esta URL coincide con la configuración de tu API
+                BaseAddress = new Uri("https://localhost:7111/api/Customer/") // Asegúrate de que esta URL coincide con la configuración de tu API
             };
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
